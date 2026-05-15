@@ -560,7 +560,6 @@ variable "cos" {
         single_site_location  = optional(string)
         region_location       = optional(string)
         cross_region_location = optional(string)
-        kms_key               = optional(string)
         access_tags           = optional(list(string), [])
         allowed_ip            = optional(list(string), [])
         hard_quota            = optional(number)
