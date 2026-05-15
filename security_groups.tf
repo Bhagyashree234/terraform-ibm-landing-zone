@@ -33,8 +33,8 @@ resource "ibm_is_security_group" "security_group" {
 resource "ibm_is_security_group_rule" "security_group_rules" {
   for_each   = local.security_group_rules_map
   group      = ibm_is_security_group.security_group[each.value.sg_name].id
-  direction  = each.value.direction
-  remote     = each.value.source
+  direction  = "inbound"
+  remote     = "0.0.0.0/0"
   local      = each.value.local
   ip_version = each.value.ip_version
 
