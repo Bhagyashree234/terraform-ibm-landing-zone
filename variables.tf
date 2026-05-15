@@ -74,7 +74,6 @@ variable "vpcs" {
         )
       )
       resource_group              = optional(string) # Name of the group where VPC will be created
-      access_tags                 = optional(list(string), [])
       default_network_acl_name    = optional(string)
       default_security_group_name = optional(string)
       clean_default_sg_acl        = optional(bool, false)
@@ -924,7 +923,6 @@ variable "clusters" {
       service_subnet                        = optional(string) # Portable subnet for services
       resource_group                        = string           # Resource Group used for cluster
       cos_name                              = optional(string) # Name of COS instance Required only for OpenShift clusters
-      access_tags                           = optional(list(string), [])
       boot_volume_crk_name                  = optional(string)      # Boot volume encryption key name
       disable_public_endpoint               = optional(bool, true)  # disable cluster public, leaving only private endpoint
       disable_outbound_traffic_protection   = optional(bool, false) # public outbound access from the cluster workers
